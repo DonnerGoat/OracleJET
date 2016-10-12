@@ -1,0 +1,33 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<h1>test</h1>
+
+<span> name </span>
+<input id="inputName" data-bind="ojComponent: {component: 'ojInputText', value:name}"></input>
+
+<br>
+
+<span> message: </span>
+<input id="inputItem" data-bind="ojComponent: {component: 'ojInputText', value:itemToAdd}"></input>
+<button id= "button"
+        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Send' }">
+</button>
+<ul id="listview" style="height: 400px" aria-label="list using observable array" 
+    data-bind="ojComponent: {
+            component: 'ojListView', 
+            data: dataSource, 
+            selection: selectedItems,
+            item: 
+            {
+                renderer: function(context)
+                {
+                    return context['data']['item'];
+                }
+            }
+        }">
+</ul>
